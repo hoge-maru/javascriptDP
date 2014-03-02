@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<head>
+    <title>Sample</title>
+</head>
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+
+<script type="text/javascript">
+    $.fn.myPluginName = function(){
+        console.log("test");
+    };
+    $.fn.myPluginName();
+
+</script>
+
+<script type="text/javascript">
+    (function($){
+        $.fn.myPluginName = function(){
+            console.log("this is my plugin");
+        }
+    })(jQuery);
+
+    $.fn.myPluginName();
+    jQuery.fn.myPluginName();
+</script>
+
+<script type="text/javascript">
+
+    (function($){
+        $.extend($.fn, {
+            myplugin: function(){
+                console.log("my plugin");
+            },
+            yourplugin: function(){
+                console.log("your plugin")
+            }
+        })
+    })(jQuery);
+
+    $.fn.yourplugin();
+    $.fn.myplugin();
+</script>
+
+
+</body>
+</html>
