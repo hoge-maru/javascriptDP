@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<head>
+    <title>Sample</title>
+</head>
+
+
+<div class="test">
+   <a>test</a>
+</div>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+
+<script type="text/javascript">
+    (function($, window, document, undefined){
+        var pluginName = "defaultPluginName",
+                defaults = {
+                    propertyName: "value"
+                };
+        function Plugin(element, options){
+            this.element = element;
+            console.log("constructor called");
+
+            this.options = $.extend({}, defaults, options);
+            this._defaults = defaults;
+            this._name = pluginName;
+            this.init();
+        }
+
+        $.fn.extend({
+            fuga: function(){
+
+                this.each(function(){
+                    var rep = $("a", this).text().replace("test", "test2");
+                    $("a", this).text(rep);
+                })
+
+            }
+        });
+
+        Plugin.prototype.init = function(){
+            console.log("init called");
+            console.log({"elements":this.element, "options":this.options.propertyName})
+        }
+
+        $.fn[pluginName] = function(options){
+
+            var r = this.each(function(){
+                if(!$.data(this, "plugin_"+pluginName)){
+                    $.data(this, "plugin_"+pluginName, new Plugin(this, options));
+                }
+            });
+
+            return r;
+        }
+    })(jQuery, window, document);
+
+    hoge = $(" .test");
+    console.log(hoge);
+    hoge.defaultPluginName({propertyName: "custom"});
+    hoge.fuga();
+
+</script>
+
+
+</body>
+</html>
