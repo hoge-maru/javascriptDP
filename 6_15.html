@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<head>
+    <title>Sample</title>
+</head>
+
+
+<div class="test">
+   <a>test</a>
+</div>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+
+    // override
+    config00 = "already exist";
+    var config00 = {};
+    console.log({config00:config00});
+
+    // not override
+    config01 = "already exist";
+    var config01 = config01 || {};
+    console.log({config01:config01});
+
+    //IIFE
+    var config02 = {};
+    (function(o){
+        o.hoge = "add"
+        o.method = function(){console.log("add method")}
+    })(config02);
+    console.log(config02);
+    config02.method();
+
+</script>
+
+
+</body>
+</html>
