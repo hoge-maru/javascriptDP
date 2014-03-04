@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<head>
+    <title>Sample</title>
+</head>
+
+
+<div class="test">
+   <a>test</a>
+</div>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+    ;(function($, window, document, undefined){
+        $.widget( "namespace.widgetname", {
+            options: {
+              someValue: null
+            },
+            _create: function(){
+
+            },
+
+            destroy: function(){
+                $.widget.prototype.destroy.call(this);
+            },
+
+            methodB: function(event){
+                console.log("methodB called");
+                value = "hogehoge";
+                this._trigger("methodA", event, {
+                    key: value
+                });
+
+            },
+
+            methodA: function(event){
+
+                this._trigger("dataChanged", event,{
+                    key: value
+                });
+
+                console.log("methodA called");
+            },
+
+            _setOption: function(key, value){
+                switch(key){
+                    case "someValue":
+                        break;
+                    default:
+                        break;
+                }
+                $.Widget.prototype._setOption.apply(this, arguments);
+            }
+
+        });
+    })(jQuery, window, document);
+
+    var collection = $(" .test").widgetname();
+    console.log(collection.widgetname("methodB"));
+
+</script>
+
+
+</body>
+</html>
