@@ -26,22 +26,22 @@ WidgetFactoryはjQueryUIの土台に使われている点がすぐれている�
 
 * 自分のコードを名前空間に隔離するのは必須マナー
 * オブジェクトリテラルを活用すれば名前空間の入れ子を実現できる
-** namespace.subnamespace.plginName
+    * namespace.subnamespace.plginName
 
 ## 6.5 カスタムイベントプラグインパターン
 
 * Pub/Subの基本的な発想
-** ページ内のオブジェクトは、アプリの中でイベント通知をpublishする
-** 他のオブジェクトはこのイベントをsubscribeして応答する
+    * ページ内のオブジェクトは、アプリの中でイベント通知をpublishする
+    * 他のオブジェクトはこのイベントをsubscribeして応答する
 
 
 ## 6.6 DOMからオブジェクトへのブリッジパターンを使ったプロトタイプ継承
 
 * JavaScriptにはクラスの概念がないがプロトタイプ継承という類似の概念が存在する
 * ブリッジパターン
-** 任意のプラグインに外部から汎用性の高いロジックを後付けできる
-** http://alexsexton.com/
-** http://scottgonzalez.com/
+    * 任意のプラグインに外部から汎用性の高いロジックを後付けできる
+    * http://alexsexton.com/
+    * http://scottgonzalez.com/
 
 ## 6.7 jQuery UI ウィジェットファクトリのブリッジパターン
 
@@ -51,7 +51,7 @@ WidgetFactoryはjQueryUIの土台に使われている点がすぐれている�
 ## 6.8 jQuery Mobile WidgetのWidgetFactory
 
 * jQuery Mobile Gallery
-** http://www.jqmgallery.com/
+    * http://www.jqmgallery.com/
 
 * こういうサイトをつくって、さらにカスタムしたいときにこの節の内容が役に立つ
 
@@ -70,21 +70,21 @@ RequireJSとjQuery UIを使うことがあればこの節の内容が役に立�
 ## 6.12-13 パターン以外にプラグインに必要なものとは？
 
 * 構文チェック
-** jsHint, JsLint
+    * jsHint, JsLint
 
 * コードスタイル
-** http://contribute.jquery.org/style-guide/js/
+    * http://contribute.jquery.org/style-guide/js/
 * jQueryのバージョン管理に気を付ける
 * プラグイン開発者は想定通り動作することを保証する
 * プラグインはユニットテストと一緒に配布すべき
 * jsPerfでパフォーマスを最適化する
 * プラグイン開発者はドキュメントを作成する
-** メソッド、オプション、etc...
+    * メソッド、オプション、etc...
 
 # 6.14-6.16 名前空間
 
 * 著者はオブジェクトリテラルパターンを使って入れ子構造のオブジェクトで名前空間を作成する
-** 可能であれば、入れ子の名前空間の自動化で実装する
+    * 可能であれば、入れ子の名前空間の自動化で実装する
 
 # 7 終わりに
 
